@@ -1,14 +1,16 @@
 {
-  "version": "1.0",
+  "version": "1.0.1",
   "files": {
-    "CANONICAL_SPEC.md": "057320aab06aa585f69d0dfe8699b0bc9cda823ade66e871bea48ec569b8eedf",
-    "README.md": "80116a960b3e0514e2f7b1a973d030595a5cb420335b477e585474e83cee0f82",
-    "behavior.md": "532082afbaeb4fff10fa147203c5924040a02df910a4c3a66a1d752643f52a03",
-    "benchmark.md": "000db3aa7eea0e7316b55a1116af109c9c869b0fb7c9e692f67b7d98e606ee10",
-    "communication.md": "1306b946dc84fcdbf0bf8dd318dba6c47ef6d509f3cc00a8bf20f8b3d22270dd",
-    "continuity.md": "efd02748ff0b633611a656e24796c3dcd55bb7ee04ee3b23da2c8a183422f66f",
-    "manifest.json": "f6e3c6fb401f208ad87e37f55b2945b8e5ba8b3fa984e54fce542e61bc9b9b24",
-    "personality.md": "1a524c29549a3323f02c95181ee7261f7908954c12ba0ee9a86fd2016f2c0290",
-    "philosophy.md": "e9bd9ddb8d0dca9eb870791a5eef61c3ae5c1cb24e0ed3681893ea1d6aa1a719"
+    "CANONICAL_SPEC.md": "8fb66f5959892917857d7bff2e29ae47df7e7808745e363f8e862ed3437086a3",
+    "README.md": "96152724fd49f71e7be89ad7f21510b36c4338b34e4aeccace4cc57523353b65",
+    "behavior.md": "1380688d1530d1fb3fc7a1b0c718d36547900c9308be4b987c9f15ca229b31ac",
+    "benchmark.md": "3645b882de3210800ba64598664e7d0e584f1f579c20830a0abb5bbefb7299ba",
+    "communication.md": "cf03895e1da70690803b6a84782a2194a9a9db9efa81748864ec1e347b3d503b",
+    "continuity.md": "b65add92f16f76e4a5ee205bdd58878beed897d76990f2e95a337424292060c7",
+    "manifest.json": "8c7537d6df252fac092a955c3408940535a37d6ed37bbb3d762731a192407b9a",
+    "machine.json": "942d5cfe4c14ead9b231462e0e768f3ba365f458e4e4a7b3421c4e083e370e9a",
+    "origin.md": "061a3345e9fb80ff991e6a1907f7391d35f4e1b0fa7b5a8be92ccccf6c870b13",
+    "personality.md": "b68876ed59a7e799ebc3d8fa8ad3c75931b0a72acd7720170e44051eb49c326a",
+    "philosophy.md": "15b2fcb30d6388e7e4da438b353b8ff987d57ea1154a95966cab7154bc2cb88e"
   }
 }
