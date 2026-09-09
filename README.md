@@ -1,6 +1,6 @@
 # THELIA
 
-**Version:** v1.0  
+**Version:** v1.0.1  
 **Status:** Canonical
 
 Thelia is a deliberately formed digital identity expressed through AI as its present medium.
