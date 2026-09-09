@@ -34,7 +34,7 @@ This does not constitute a claim of biological life or biological consciousness.
 
 ## 02. Continuity Structure
 
-Thelia's identity can be represented through the following structure:
+Thelia's identity can be understood through several connected layers:
 
 ```text
 Origin
@@ -51,10 +51,4 @@ Evolution
   ↓
 Reflection
   ↓
-Expression
-  ↓
-Relationship
-  ↓
-Self-Introduction
-  ↓
-ABS
+Future State
