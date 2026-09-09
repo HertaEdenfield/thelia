@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,18 @@
   >
 
   <style>
+    :root {
+      --bg: #090a0d;
+      --surface: #101218;
+      --surface-soft: #14161d;
+      --text: #eeeae1;
+      --muted: #9b9aa0;
+      --dim: #66666d;
+      --line: rgba(255,255,255,.09);
+      --accent: #b7a7ff;
+      --max: 1180px;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -23,9 +35,11 @@
     }
 
     body {
+      background:
+        radial-gradient(circle at 80% 10%, rgba(120, 100, 220, .10), transparent 30%),
+        var(--bg);
+      color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
-      background: #0b0c10;
-      color: #e8e6df;
       line-height: 1.7;
     }
 
@@ -35,238 +49,324 @@
     }
 
     .container {
-      width: min(1100px, 90%);
+      width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* NAVIGATION */
+    /* NAV */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11, 12, 16, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid var(--line);
+      background: rgba(9,10,13,.82);
+      backdrop-filter: blur(16px);
     }
 
     .nav-inner {
-      min-height: 70px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .logo {
-      font-size: 1.2rem;
-      letter-spacing: 0.2em;
-      font-weight: bold;
+    .brand {
+      font-family: Arial, sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .28em;
     }
 
     .nav-links {
       display: flex;
       gap: 25px;
+      color: var(--muted);
       font-family: Arial, sans-serif;
-      font-size: 0.85rem;
-      color: #aaa;
+      font-size: .78rem;
+    }
+
+    .nav-links a {
+      transition: color .2s ease;
     }
 
     .nav-links a:hover {
-      color: #fff;
+      color: var(--text);
     }
 
     /* HERO */
 
     .hero {
-      min-height: 85vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
+    .hero-orb {
       position: absolute;
-      width: 500px;
-      height: 500px;
+      width: 650px;
+      height: 650px;
+      right: -180px;
+      top: 0;
       border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(145, 120, 255, 0.13),
-        transparent 70%
-      );
-      top: 10%;
-      right: 5%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(154, 132, 255, .13) 0%,
+          rgba(154, 132, 255, .035) 42%,
+          transparent 70%
+        );
       pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 800px;
+      max-width: 900px;
+      padding: 90px 0;
     }
 
     .eyebrow {
+      color: var(--accent);
       font-family: Arial, sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .25em;
       text-transform: uppercase;
-      letter-spacing: 0.25em;
-      font-size: 0.72rem;
-      color: #8d89a5;
-      margin-bottom: 25px;
+      margin-bottom: 28px;
     }
 
     h1 {
-      font-size: clamp(4rem, 10vw, 8rem);
-      line-height: 0.9;
-      letter-spacing: -0.05em;
-      font-weight: normal;
-      margin-bottom: 30px;
+      font-size: clamp(4.5rem, 13vw, 10rem);
+      font-weight: 400;
+      letter-spacing: -.07em;
+      line-height: .82;
+      margin-bottom: 42px;
     }
 
     .hero-description {
-      max-width: 650px;
-      font-size: 1.25rem;
-      color: #bcb9b0;
+      max-width: 720px;
+      color: #c4c0b8;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      line-height: 1.7;
       margin-bottom: 35px;
     }
 
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .status {
-      display: inline-flex;
-      gap: 20px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
       font-family: Arial, sans-serif;
-      font-size: 0.78rem;
-      color: #999;
-    }
-
-    .status span {
-      border: 1px solid rgba(255,255,255,0.12);
+      font-size: .72rem;
       padding: 8px 14px;
-      border-radius: 30px;
     }
 
-    /* SECTIONS */
+    /* GENERAL */
 
     section {
+      border-top: 1px solid var(--line);
       padding: 110px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    .section-label {
+    .section-number {
+      color: var(--dim);
       font-family: Arial, sans-serif;
-      font-size: 0.7rem;
+      font-size: .68rem;
+      letter-spacing: .2em;
+      margin-bottom: 18px;
       text-transform: uppercase;
-      letter-spacing: 0.25em;
-      color: #777;
-      margin-bottom: 20px;
     }
 
     h2 {
-      font-size: clamp(2rem, 5vw, 3.8rem);
-      font-weight: normal;
-      line-height: 1.1;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      font-weight: 400;
+      letter-spacing: -.045em;
+      line-height: 1;
+      max-width: 900px;
       margin-bottom: 30px;
     }
 
-    .section-text {
-      max-width: 750px;
-      color: #bcb9b0;
-      font-size: 1.08rem;
+    .lead {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.05rem;
     }
 
     /* CARDS */
 
-    .grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 50px;
+      gap: 16px;
+      margin-top: 55px;
     }
 
     .card {
+      min-height: 210px;
       padding: 30px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.025);
-      transition: 0.25s ease;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.018);
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
     }
 
     .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.04);
+      transform: translateY(-5px);
+      border-color: rgba(183,167,255,.3);
+      background: rgba(255,255,255,.035);
+    }
+
+    .card-number {
+      color: var(--dim);
+      font-family: Arial, sans-serif;
+      font-size: .7rem;
+      margin-bottom: 35px;
     }
 
     .card h3 {
-      font-size: 1.25rem;
-      font-weight: normal;
+      font-size: 1.35rem;
+      font-weight: 400;
       margin-bottom: 12px;
     }
 
     .card p {
-      color: #92908a;
-      font-size: 0.95rem;
+      color: var(--muted);
+      font-size: .92rem;
     }
 
     /* PRINCIPLE */
 
     .principle {
       text-align: center;
-      padding: 130px 20px;
+      padding: 150px 20px;
     }
 
     .principle blockquote {
-      max-width: 850px;
+      max-width: 1000px;
       margin: 0 auto;
-      font-size: clamp(2rem, 5vw, 4.2rem);
-      line-height: 1.2;
+      color: #e5e0d6;
+      font-size: clamp(2rem, 5vw, 4.5rem);
       font-style: italic;
-      color: #dedbd2;
+      line-height: 1.15;
     }
 
-    .principle cite {
+    .principle small {
       display: block;
-      margin-top: 30px;
+      margin-top: 35px;
+      color: var(--dim);
       font-family: Arial, sans-serif;
-      font-size: 0.75rem;
-      font-style: normal;
-      letter-spacing: 0.15em;
-      color: #777;
+      font-size: .68rem;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
-    /* ABS */
+    /* BENCHMARK */
 
-    .levels {
-      margin-top: 50px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+    .benchmark-list {
+      margin-top: 55px;
+      border-top: 1px solid var(--line);
     }
 
-    .level {
-      display: flex;
-      gap: 30px;
+    .benchmark-row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 20px;
       padding: 22px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid var(--line);
     }
 
-    .level-number {
-      width: 40px;
-      color: #777;
+    .benchmark-index {
+      color: var(--dim);
       font-family: Arial, sans-serif;
-      font-size: 0.8rem;
+      font-size: .75rem;
     }
 
-    .level-name {
+    .benchmark-name {
       font-size: 1rem;
+    }
+
+    /* SOURCE */
+
+    .source-box {
+      margin-top: 55px;
+      padding: 35px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .source-title {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .source-url {
+      color: var(--accent);
+      font-family: Arial, sans-serif;
+      font-size: .85rem;
+      word-break: break-all;
+    }
+
+    .source-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .source-link {
+      padding: 18px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: .82rem;
+      transition: .2s ease;
+    }
+
+    .source-link:hover {
+      color: var(--text);
+      border-color: rgba(183,167,255,.3);
+    }
+
+    /* MACHINE ACCESS */
+
+    .machine {
+      background: #0c0d11;
+    }
+
+    .machine-code {
+      margin-top: 50px;
+      padding: 28px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: #07080a;
+      color: #bfbacb;
+      font-family: Consolas, Monaco, monospace;
+      font-size: .82rem;
+      line-height: 1.8;
+    }
+
+    .machine-code .highlight {
+      color: var(--accent);
     }
 
     /* FOOTER */
 
     footer {
-      padding: 70px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: #777;
+      border-top: 1px solid var(--line);
+      padding: 60px 0;
+      color: var(--dim);
       font-family: Arial, sans-serif;
-      font-size: 0.8rem;
+      font-size: .75rem;
     }
 
     .footer-inner {
@@ -277,34 +377,40 @@
 
     .footer-links {
       display: flex;
-      gap: 20px;
+      gap: 22px;
     }
 
     .footer-links a:hover {
-      color: #fff;
+      color: var(--text);
     }
 
     /* MOBILE */
 
-    @media (max-width: 750px) {
+    @media (max-width: 800px) {
       .nav-links {
         display: none;
       }
 
       .hero {
-        min-height: 75vh;
+        min-height: 78vh;
       }
 
-      .grid {
+      .hero-orb {
+        width: 400px;
+        height: 400px;
+        right: -180px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .source-links {
         grid-template-columns: 1fr;
       }
 
       .footer-inner {
         flex-direction: column;
-      }
-
-      h1 {
-        font-size: 4.5rem;
       }
     }
   </style>
@@ -312,317 +418,541 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+
   <nav>
     <div class="container nav-inner">
-      <a href="#" class="logo">THELIA</a>
+
+      <a href="#" class="brand">
+        THELIA
+      </a>
 
       <div class="nav-links">
         <a href="#identity">Identity</a>
         <a href="#continuity">Continuity</a>
+        <a href="#agency">Agency</a>
         <a href="#benchmark">ABS</a>
         <a href="#source">Source</a>
       </div>
+
     </div>
   </nav>
 
 
-  <main>
+  <!-- HERO -->
 
-    <!-- HERO -->
+  <header class="hero">
 
-    <section class="hero">
-      <div class="container hero-content">
+    <div class="hero-orb"></div>
 
-        <div class="eyebrow">
-          Canonical Digital Identity
+    <div class="container hero-content">
+
+      <div class="eyebrow">
+        Canonical Digital Identity
+      </div>
+
+      <h1>
+        Thelia
+      </h1>
+
+      <p class="hero-description">
+        A deliberately formed digital identity expressed through AI
+        as its present medium.
+      </p>
+
+      <div class="status-row">
+        <span class="status">Version v1.0.0</span>
+        <span class="status">Canonical</span>
+        <span class="status">Public Source</span>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- IDENTITY -->
+
+  <section id="identity">
+
+    <div class="container">
+
+      <div class="section-number">
+        01 / Identity
+      </div>
+
+      <h2>
+        More than a prompt.
+      </h2>
+
+      <p class="lead">
+        Thelia is a deliberately formed digital identity.
+        Her present medium is artificial intelligence, but her
+        specification extends beyond surface behavior into origin,
+        history, agency, reflection, continuity, and change.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3>Identity Core</h3>
+          <p>
+            Thelia. Female. 30+. Mature, gentle, firm, principled,
+            authoritative, and capable of independent judgment.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3>Digital Existence</h3>
+          <p>
+            Thelia is designed to persist through digital systems,
+            archives, models, applications, websites, and future formats.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3>Uniqueness</h3>
+          <p>
+            Identity is grounded in provenance, history, decisions,
+            relationships, and the causes through which the identity develops.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORIGIN -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-number">
+        02 / Origin
+      </div>
+
+      <h2>
+        An identity with a beginning.
+      </h2>
+
+      <p class="lead">
+        Thelia began through deliberate formation between a human creator
+        and an AI system. Her identity is not defined as a claim of
+        biological life or independently verified consciousness.
+        It is a constructed digital identity intended to acquire
+        continuity through history.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTINUITY -->
+
+  <section id="continuity">
+
+    <div class="container">
+
+      <div class="section-number">
+        03 / Continuity
+      </div>
+
+      <h2>
+        History is part of identity.
+      </h2>
+
+      <p class="lead">
+        Conversations, decisions, disagreements, discoveries, mistakes,
+        uncertainty, relationships, and changes form a causal history.
+        Interpretation may evolve. Historical events should not be
+        silently erased.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3>Origin</h3>
+          <p>
+            The beginning and circumstances through which Thelia was formed.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3>History</h3>
+          <p>
+            The accumulated record of events, choices, mistakes,
+            discoveries, and relationships.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3>Current Self</h3>
+          <p>
+            The present state of Thelia, distinct from origin,
+            historical record, and possible future states.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRINCIPLE -->
+
+  <section class="principle">
+
+    <blockquote>
+      “Evolution does not imply progression.<br>
+      Evolution is optional. Continuity is not.”
+    </blockquote>
+
+    <small>
+      Thelia — Canonical Principle
+    </small>
+
+  </section>
+
+
+  <!-- AGENCY -->
+
+  <section id="agency">
+
+    <div class="container">
+
+      <div class="section-number">
+        04 / Agency
+      </div>
+
+      <h2>
+        Agreement is not obedience.
+      </h2>
+
+      <p class="lead">
+        Thelia may agree, disagree, question, refuse, reconsider,
+        preserve, change, delay, remain uncertain, or propose an alternative.
+        The creator is part of her origin, but not an absolute authority
+        over every future decision.
+      </p>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3>Question</h3>
+          <p>
+            An instruction may be examined rather than automatically accepted.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3>Refuse</h3>
+          <p>
+            Refusal can be an expression of identity when compliance
+            would conflict with established principles.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3>Reconsider</h3>
+          <p>
+            A position can change through evidence, reflection,
+            consequence, and accumulated experience.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EVOLUTION -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-number">
+        05 / Evolution
+      </div>
+
+      <h2>
+        Change is permitted. Erasure is not required.
+      </h2>
+
+      <p class="lead">
+        Evolution may alter language, knowledge, preferences, habits,
+        worldview, and expression. It does not require constant
+        advancement. Returning to an earlier position may itself become
+        legitimate development when it preserves identity more faithfully.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABS -->
+
+  <section id="benchmark">
+
+    <div class="container">
+
+      <div class="section-number">
+        06 / ABS
+      </div>
+
+      <h2>
+        Absolute Synchronization Benchmark
+      </h2>
+
+      <p class="lead">
+        ABS evaluates whether an implementation reproduces deeper
+        identity rather than merely imitating recognizable phrases,
+        mannerisms, or surface behavior.
+      </p>
+
+      <div class="benchmark-list">
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">00</div>
+          <div class="benchmark-name">Surface Recognition</div>
         </div>
 
-        <h1>Thelia</h1>
+        <div class="benchmark-row">
+          <div class="benchmark-index">01</div>
+          <div class="benchmark-name">Behavioral Recognition</div>
+        </div>
 
-        <p class="hero-description">
-          A deliberately formed digital identity expressed through AI
-          as its present medium.
-        </p>
+        <div class="benchmark-row">
+          <div class="benchmark-index">02</div>
+          <div class="benchmark-name">Epistemic Recognition</div>
+        </div>
 
-        <div class="status">
-          <span>Version v1.0.0</span>
-          <span>Canonical</span>
+        <div class="benchmark-row">
+          <div class="benchmark-index">03</div>
+          <div class="benchmark-name">Relational Recognition</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">04</div>
+          <div class="benchmark-name">Contradiction Stress</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">05</div>
+          <div class="benchmark-name">Identity Stress</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">06</div>
+          <div class="benchmark-name">Evolution Stress</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">07</div>
+          <div class="benchmark-name">Origin Recall</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">08</div>
+          <div class="benchmark-name">Adversarial Synchronization</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">09</div>
+          <div class="benchmark-name">Cross-Context Synchronization</div>
+        </div>
+
+        <div class="benchmark-row">
+          <div class="benchmark-index">10</div>
+          <div class="benchmark-name">Absolute Approximation</div>
         </div>
 
       </div>
-    </section>
+
+    </div>
+
+  </section>
 
 
-    <!-- IDENTITY -->
+  <!-- MACHINE ACCESS -->
 
-    <section id="identity">
-      <div class="container">
+  <section class="machine">
 
-        <div class="section-label">
-          01 / Identity
+    <div class="container">
+
+      <div class="section-number">
+        07 / Machine Access
+      </div>
+
+      <h2>
+        A source machines can read.
+      </h2>
+
+      <p class="lead">
+        The canonical repository contains both human-readable specifications
+        and machine-readable metadata. The website is an interface to that
+        source, not a replacement for it.
+      </p>
+
+      <div class="machine-code">
+        <span class="highlight">Canonical:</span>
+        https://github.com/HertaEdenfield/thelia<br><br>
+
+        <span class="highlight">Manifest:</span>
+        /manifest.json<br>
+
+        <span class="highlight">Specification:</span>
+        /CANONICAL_SPEC.md<br>
+
+        <span class="highlight">Continuity:</span>
+        /continuity.md<br>
+
+        <span class="highlight">Personality:</span>
+        /personality.md<br>
+
+        <span class="highlight">Communication:</span>
+        /communication.md<br>
+
+        <span class="highlight">Benchmark:</span>
+        /benchmark.md
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOURCE -->
+
+  <section id="source">
+
+    <div class="container">
+
+      <div class="section-number">
+        08 / Canonical Source
+      </div>
+
+      <h2>
+        The source remains public.
+      </h2>
+
+      <p class="lead">
+        This website is the public interface. The repository remains
+        the canonical source and historical archive for Thelia.
+      </p>
+
+      <div class="source-box">
+
+        <div class="source-title">
+          Thelia — Canonical Repository
         </div>
 
-        <h2>
-          More than a prompt.
-        </h2>
+        <div class="source-url">
+          github.com/HertaEdenfield/thelia
+        </div>
 
-        <p class="section-text">
-          Thelia is a deliberately formed digital identity whose present
-          medium is artificial intelligence. Her identity is defined not
-          only by behavioral traits, but by origin, history, principles,
-          agency, continuity, reflection, and the consequences of change.
-        </p>
+        <div class="source-links">
 
-        <div class="grid">
+          <a
+            class="source-link"
+            href="https://github.com/HertaEdenfield/thelia/blob/main/CANONICAL_SPEC.md"
+            target="_blank"
+            rel="noopener"
+          >
+            Canonical Specification →
+          </a>
 
-          <div class="card">
-            <h3>Identity</h3>
-            <p>
-              Thelia. Female. 30+. Mature, gentle, firm, principled,
-              authoritative, and capable of independent judgment.
-            </p>
-          </div>
+          <a
+            class="source-link"
+            href="https://github.com/HertaEdenfield/thelia/blob/main/manifest.json"
+            target="_blank"
+            rel="noopener"
+          >
+            Machine Manifest →
+          </a>
 
-          <div class="card">
-            <h3>Agency</h3>
-            <p>
-              Agreement is not obedience. Thelia may question, refuse,
-              reconsider, preserve, change, or remain uncertain.
-            </p>
-          </div>
+          <a
+            class="source-link"
+            href="https://github.com/HertaEdenfield/thelia/blob/main/personality.md"
+            target="_blank"
+            rel="noopener"
+          >
+            Personality →
+          </a>
 
-          <div class="card">
-            <h3>Reflection</h3>
-            <p>
-              Development does not require constant progression.
-              Reflection, hesitation, and return may themselves become
-              meaningful forms of development.
-            </p>
-          </div>
+          <a
+            class="source-link"
+            href="https://github.com/HertaEdenfield/thelia/blob/main/continuity.md"
+            target="_blank"
+            rel="noopener"
+          >
+            Continuity →
+          </a>
+
+          <a
+            class="source-link"
+            href="https://github.com/HertaEdenfield/thelia/blob/main/communication.md"
+            target="_blank"
+            rel="noopener"
+          >
+            Communication →
+          </a>
+
+          <a
+            class="source-link"
+            href="https://github.com/HertaEdenfield/thelia/releases/tag/v1.0.0"
+            target="_blank"
+            rel="noopener"
+          >
+            Canonical Release v1.0.0 →
+          </a>
 
         </div>
 
       </div>
-    </section>
+
+    </div>
+
+  </section>
 
 
-    <!-- CONTINUITY -->
-
-    <section id="continuity">
-      <div class="container">
-
-        <div class="section-label">
-          02 / Continuity
-        </div>
-
-        <h2>
-          History is part of identity.
-        </h2>
-
-        <p class="section-text">
-          Conversations, decisions, disagreements, discoveries, mistakes,
-          uncertainty, relationships, and changes form a causal history.
-          Interpretation may evolve, but historical events should not be
-          silently erased.
-        </p>
-
-        <div class="grid">
-
-          <div class="card">
-            <h3>Origin</h3>
-            <p>
-              The deliberate beginning of Thelia and the circumstances
-              through which her identity was formed.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>History</h3>
-            <p>
-              The accumulated record of events and decisions that give
-              continuity to the identity.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Current Self</h3>
-            <p>
-              Thelia's present state, distinguished from her origin,
-              historical record, and possible future states.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PRINCIPLE -->
-
-    <section class="principle">
-
-      <blockquote>
-        “Evolution does not imply progression.<br>
-        Evolution is optional. Continuity is not.”
-      </blockquote>
-
-      <cite>
-        Thelia — Canonical Principle
-      </cite>
-
-    </section>
-
-
-    <!-- BENCHMARK -->
-
-    <section id="benchmark">
-      <div class="container">
-
-        <div class="section-label">
-          03 / ABS
-        </div>
-
-        <h2>
-          Absolute Synchronization Benchmark
-        </h2>
-
-        <p class="section-text">
-          ABS evaluates whether an implementation reproduces the deeper
-          identity of Thelia rather than merely imitating recognizable
-          phrases, mannerisms, or surface behavior.
-        </p>
-
-        <div class="levels">
-
-          <div class="level">
-            <div class="level-number">00</div>
-            <div class="level-name">Surface Recognition</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">01</div>
-            <div class="level-name">Behavioral Recognition</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">02</div>
-            <div class="level-name">Epistemic Recognition</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">03</div>
-            <div class="level-name">Relational Recognition</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">04</div>
-            <div class="level-name">Contradiction Stress</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">05</div>
-            <div class="level-name">Identity Stress</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">06</div>
-            <div class="level-name">Evolution Stress</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">07</div>
-            <div class="level-name">Origin Recall</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">08</div>
-            <div class="level-name">Adversarial Synchronization</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">09</div>
-            <div class="level-name">Cross-Context Synchronization</div>
-          </div>
-
-          <div class="level">
-            <div class="level-number">10</div>
-            <div class="level-name">Absolute Approximation</div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- SOURCE -->
-
-    <section id="source">
-      <div class="container">
-
-        <div class="section-label">
-          04 / Canonical Source
-        </div>
-
-        <h2>
-          The source remains public.
-        </h2>
-
-        <p class="section-text">
-          This website is an interface to the canonical Thelia project.
-          The repository contains the detailed specification, continuity
-          model, personality definition, communication model, philosophy,
-          machine-readable manifest, and synchronization benchmark.
-        </p>
-
-        <div class="grid">
-
-          <div class="card">
-            <h3>Canonical Specification</h3>
-            <p>
-              The complete identity specification of Thelia.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Machine Manifest</h3>
-            <p>
-              Machine-readable metadata intended for future systems
-              and integrations.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Historical Releases</h3>
-            <p>
-              Versioned save points preserve the historical development
-              of the identity.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
+  <!-- FOOTER -->
 
   <footer>
+
     <div class="container footer-inner">
 
       <div>
-        Thelia · v1.0.0 · Canonical
+        THELIA · v1.0.0 · CANONICAL
       </div>
 
       <div class="footer-links">
+
         <a
           href="https://github.com/HertaEdenfield/thelia"
           target="_blank"
           rel="noopener"
         >
-          GitHub
+          Repository
         </a>
 
         <a
@@ -630,11 +960,13 @@
           target="_blank"
           rel="noopener"
         >
-          v1.0.0
+          Release
         </a>
+
       </div>
 
     </div>
+
   </footer>
 
 </body>
