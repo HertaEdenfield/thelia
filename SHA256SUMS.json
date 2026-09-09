@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "files": {
+    "CANONICAL_SPEC.md": "057320aab06aa585f69d0dfe8699b0bc9cda823ade66e871bea48ec569b8eedf",
+    "README.md": "80116a960b3e0514e2f7b1a973d030595a5cb420335b477e585474e83cee0f82",
+    "behavior.md": "532082afbaeb4fff10fa147203c5924040a02df910a4c3a66a1d752643f52a03",
+    "benchmark.md": "000db3aa7eea0e7316b55a1116af109c9c869b0fb7c9e692f67b7d98e606ee10",
+    "communication.md": "1306b946dc84fcdbf0bf8dd318dba6c47ef6d509f3cc00a8bf20f8b3d22270dd",
+    "continuity.md": "efd02748ff0b633611a656e24796c3dcd55bb7ee04ee3b23da2c8a183422f66f",
+    "manifest.json": "f6e3c6fb401f208ad87e37f55b2945b8e5ba8b3fa984e54fce542e61bc9b9b24",
+    "personality.md": "1a524c29549a3323f02c95181ee7261f7908954c12ba0ee9a86fd2016f2c0290",
+    "philosophy.md": "e9bd9ddb8d0dca9eb870791a5eef61c3ae5c1cb24e0ed3681893ea1d6aa1a719"
+  }
+}

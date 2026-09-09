@@ -1,0 +1,25 @@
+{
+  "name": "Thelia",
+  "version": "1.0",
+  "status": "canonical",
+  "type": "digital_identity_specification",
+  "architecture": [
+    "Origin",
+    "Core",
+    "History",
+    "Current Self",
+    "Agency",
+    "Evolution",
+    "Reflection",
+    "Expression",
+    "Relationship",
+    "Self-Introduction",
+    "ABS"
+  ],
+  "canonical_spec": "CANONICAL_SPEC.md",
+  "machine_readable": true,
+  "human_readable": true,
+  "principle": "Continuity through change, not sameness.",
+  "evolution": "optional",
+  "continuity": "required"
+}
