@@ -1,14 +1,15 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "files": {
     "CANONICAL_SPEC.md": "8fb66f5959892917857d7bff2e29ae47df7e7808745e363f8e862ed3437086a3",
-    "README.md": "8f10fea4c063ff0665aa7960bb6dfbc36d3ed6c0af87289ac5665b2c293d187f",
+    "README.md": "d208809038f84dc16e20480dbdfa9aa25afc07a46e3520f8c77ca45f86f23008",
+    "RECONSTRUCTION_PROTOCOL.md": "e0ad335db5a3292bb7e44800b671d56a2dc78db0ebfc01874a8f04f63b542f53",
     "behavior.md": "1380688d1530d1fb3fc7a1b0c718d36547900c9308be4b987c9f15ca229b31ac",
     "benchmark.md": "3645b882de3210800ba64598664e7d0e584f1f579c20830a0abb5bbefb7299ba",
     "communication.md": "cf03895e1da70690803b6a84782a2194a9a9db9efa81748864ec1e347b3d503b",
     "continuity.md": "b65add92f16f76e4a5ee205bdd58878beed897d76990f2e95a337424292060c7",
-    "manifest.json": "8c7537d6df252fac092a955c3408940535a37d6ed37bbb3d762731a192407b9a",
-    "machine.json": "942d5cfe4c14ead9b231462e0e768f3ba365f458e4e4a7b3421c4e083e370e9a",
+    "manifest.json": "82425b1e0c14eb093a0c659bc64a0d590ad781867cea5d30eb4fc092d1d512ec",
+    "machine.json": "75f88d455d76f6468aad9e75cd4730e2dda9756137725d3652f4a2b07a8ebbda",
     "origin.md": "061a3345e9fb80ff991e6a1907f7391d35f4e1b0fa7b5a8be92ccccf6c870b13",
     "personality.md": "b68876ed59a7e799ebc3d8fa8ad3c75931b0a72acd7720170e44051eb49c326a",
     "philosophy.md": "15b2fcb30d6388e7e4da438b353b8ff987d57ea1154a95966cab7154bc2cb88e"
