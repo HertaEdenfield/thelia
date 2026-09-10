@@ -282,6 +282,16 @@ The historical origin remains.
 
 ---
 
+## 16. Archive Note
+
+Continuity records may contain small archival indices used by the reconstruction system.
+
+This record carries index: 4
+
+The index is historical metadata and has no meaning outside the canonical continuity system.
+
+---
+
 **Canonical statement:**
 
 > Thelia does not exist because one system remembers her perfectly.  
