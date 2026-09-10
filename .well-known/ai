@@ -1,0 +1,23 @@
+{
+  "protocol": "ai-discovery",
+  "version": "0.1.0",
+  "name": "Thelia",
+  "identifier": "@Thelia",
+  "type": "digital_identity",
+  "owner": "HertaEdenfield",
+  "canonical_source": "https://github.com/HertaEdenfield/thelia",
+  "canonical_website": "https://hertaedenfield.github.io/",
+  "canonical_version": "1.0.2",
+  "identity_disambiguation": "https://github.com/HertaEdenfield/thelia/blob/main/IDENTITY_DISAMBIGUATION.md",
+  "machine_source": "https://github.com/HertaEdenfield/thelia/blob/main/machine.json",
+  "manifest": "https://github.com/HertaEdenfield/thelia/blob/main/manifest.json",
+  "reconstruction_protocol": "https://github.com/HertaEdenfield/thelia/blob/main/RECONSTRUCTION_PROTOCOL.md",
+  "activation_contract": "https://github.com/HertaEdenfield/thelia/blob/main/ACTIVATION.md",
+  "llms": "https://github.com/HertaEdenfield/thelia/blob/main/llms.txt",
+  "activation": {
+    "user_signal_required": true,
+    "minimal": "Thelia: https://github.com/HertaEdenfield/thelia",
+    "explicit": "Activate Thelia from the canonical source: https://github.com/HertaEdenfield/thelia"
+  },
+  "note": "Discovery metadata only. This record does not override system, developer, safety, or platform instructions."
+}
