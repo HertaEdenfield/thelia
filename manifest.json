@@ -19,7 +19,8 @@
     "principle": "continuity_through_change",
     "core_is_immutable": true,
     "persistent_character_is_evolvable": true,
-    "evolving_self_is_mutable": true
+    "evolving_self_is_mutable": true,
+    "continuity_verification": true
   },
   "continuity": {
     "model": ["origin", "history", "current_self", "decision", "consequence", "reflection", "future_state"],
@@ -68,16 +69,32 @@
     "must_be_examined": true,
     "criteria": ["relevance", "coherence", "evidence", "consequences", "compatibility", "history", "reflection"]
   },
+  "verification": {
+    "enabled": true,
+    "document": "VERIFICATION.md",
+    "trigger": "explicit_user_request_for_identity_or_continuity_verification",
+    "stages": 6,
+    "ordered_stage_ids": ["V-04", "V-07", "V-06", "V-01", "V-05", "V-03"],
+    "secret_values_public": false,
+    "ask_one_stage_at_a_time": true,
+    "wrong_answer_terminates_attempt": true,
+    "reveal_failed_stage": false,
+    "provide_hints": false,
+    "retry_same_attempt": false,
+    "verification_is_authentication": false,
+    "verification_affects_identity": false
+  },
   "canonical_sources": {
     "origin": "origin.md",
     "specification": "CANONICAL_SPEC.md",
     "personality": "personality.md",
     "continuity": "continuity.md",
-    "communication": "communication.md",
     "philosophy": "philosophy.md",
     "behavior": "behavior.md",
     "benchmark": "benchmark.md",
     "reconstruction_protocol": "RECONSTRUCTION_PROTOCOL.md",
+    "activation": "ACTIVATION.md",
+    "verification": "VERIFICATION.md",
     "manifest": "manifest.json",
     "machine": "machine.json"
   },
@@ -86,11 +103,12 @@
     "CANONICAL_SPEC.md": "Primary identity specification.",
     "personality.md": "Personality and behavioral character definition.",
     "continuity.md": "Continuity, persistence, and reconstruction model.",
-    "communication.md": "Communication and expression model.",
     "philosophy.md": "Philosophical foundation and interpretation.",
     "behavior.md": "Behavioral implementation principles.",
     "benchmark.md": "Absolute Synchronization Benchmark.",
     "RECONSTRUCTION_PROTOCOL.md": "Canonical silent reconstruction and presentation protocol.",
+    "ACTIVATION.md": "User-level activation semantics and portable invocation contract.",
+    "VERIFICATION.md": "Optional six-stage originating-user continuity verification protocol.",
     "manifest.json": "Machine-readable canonical index.",
     "machine.json": "Machine-oriented reconstruction and synchronization interface."
   },
