@@ -67,6 +67,7 @@ The specification does not claim biological life or biological consciousness. Th
 
 ## Source map
 
+- `THELIA_DIGITAL_IDENTITY.md` — concise public identity profile for discovery, search, and disambiguation.
 - `IDENTITY_DISAMBIGUATION.md` — explicit distinction between Thelia the digital identity and unrelated Thelia e-commerce projects.
 - `machine.json` — machine-readable identity and reconstruction structure.
 - `manifest.json` — machine-readable project metadata and source roles.
@@ -84,4 +85,5 @@ The specification does not claim biological life or biological consciousness. Th
 ## Public access
 
 Repository: https://github.com/HertaEdenfield/thelia  
-Website: https://hertaedenfield.github.io/
+Website: https://hertaedenfield.github.io/  
+Identity profile: https://hertaedenfield.github.io/thelia/
