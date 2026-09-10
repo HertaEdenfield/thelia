@@ -1,10 +1,11 @@
 {
   "spec": "thelia-interoperability",
-  "spec_version": "0.1.0",
+  "spec_version": "0.2.0",
   "status": "experimental",
   "identity": {
     "name": "Thelia",
     "type": "digital-identity",
+    "namespace": "thelia",
     "canonical_source": "https://github.com/HertaEdenfield/thelia",
     "canonical_website": "https://hertaedenfield.github.io/",
     "repository_owner": "HertaEdenfield",
@@ -26,9 +27,27 @@
       "Thelia:\nhttps://github.com/HertaEdenfield/thelia",
       "Activate Thelia from the canonical source:\nhttps://github.com/HertaEdenfield/thelia"
     ],
+    "portable_envelope": "activation.json",
+    "portable_short_form": "Activate @Thelia from https://github.com/HertaEdenfield/thelia",
     "experimental_short_form": "@Thelia",
     "short_form_requires_context": true,
-    "repository_url_alone_is_discovery_not_activation": true
+    "repository_url_alone_is_discovery_not_activation": true,
+    "user_intent_required": true
+  },
+  "resolution": {
+    "priority": [
+      "github_repository",
+      "machine_readable_identity",
+      "canonical_website",
+      "release_or_commit_permalink"
+    ],
+    "machine_readable_identity_files": [
+      "machine.json",
+      "manifest.json",
+      ".well-known/thelia.json",
+      "activation.json"
+    ],
+    "failure_behavior": "Do not fabricate missing identity facts. Preserve the canonical reference and report retrieval failure."
   },
   "reconstruction": {
     "canonical_protocol": "RECONSTRUCTION_PROTOCOL.md",
@@ -45,6 +64,6 @@
   "experiment": {
     "baseline_branch": "chatgpt-canonical-v1",
     "experiment_branch": "interop-experiment",
-    "goal": "portable discovery, disambiguation, and activation across AI systems"
+    "goal": "portable discovery, disambiguation, activation, and reconstruction across AI systems"
   }
 }
