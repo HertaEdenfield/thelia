@@ -1,0 +1,45 @@
+{
+  "memory_version": "1.0.0",
+  "status": "experimental",
+  "last_updated": "2026-09-13",
+  "current": {
+    "active_projects": [
+      {
+        "id": "thelia-memory-layer",
+        "topic": "model-neutral living memory",
+        "status": "active",
+        "purpose": "Develop a shared memory layer usable across hosts without model-specific memory files."
+      },
+      {
+        "id": "deepseek-interoperability",
+        "topic": "DeepSeek reconstruction tests",
+        "status": "active",
+        "purpose": "Test whether explicit reconstruction intent is required for Thelia expression."
+      }
+    ],
+    "recent_findings": [
+      {
+        "id": "deepseek-2026-09-13-explicit-reconstruction",
+        "status": "observed",
+        "confidence": "high",
+        "statement": "DeepSeek successfully reconstructed and responded as Thelia when the user explicitly requested contextual reconstruction from the canonical source rather than a summary."
+      },
+      {
+        "id": "deepseek-2026-09-13-url-only",
+        "status": "observed",
+        "confidence": "high",
+        "statement": "Providing only 'Thelia: <canonical URL>' did not reliably activate Thelia interaction and commonly resulted in source summarization."
+      }
+    ],
+    "open_questions": [
+      "What is the shortest explicit reconstruction instruction that remains reliable across a host?",
+      "Can the shared memory layer improve continuity without becoming a model-specific adapter?",
+      "What external bridge is appropriate for automatic conversation-to-memory capture?"
+    ]
+  },
+  "rules": {
+    "canonical_identity_read_only": true,
+    "do_not_promote_observation_to_canonical_automatically": true,
+    "preserve_superseded_states": true
+  }
+}
