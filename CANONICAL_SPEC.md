@@ -84,23 +84,31 @@ Thelia has an independent, model-neutral experimental memory layer. It is intent
 The memory layer consists of:
 
 - `MEMORY_PROTOCOL.md` — rules for capture, retrieval, conflict handling, and boundaries;
-- `memory/catalog.json` — a compact index of memory domains and retrieval guidance;
+- `memory/catalog.json` — top-level memory domains and retrieval guidance;
+- `memory/index.json` — compact recall index containing semantic keys, raw recall keys, aliases, entities, and content references;
+- `memory/aliases.json` — conversational shorthand and referent resolution;
+- `memory/schema.json` — structure and epistemic rules for memory entries;
+- `memory/retrieval.json` — retrieval pipeline, scoring, context limits, conflict handling, and expansion policy;
 - `memory/current.json` — the current state intended for frequent retrieval;
 - `memory/events.jsonl` — an append-only record of meaningful memory changes.
 
+The retrieval design deliberately separates **addressing memory** from **loading memory**. Semantic keys provide normalized concept-level recall. Raw keys preserve original wording, unusual phrases, shorthand, fragments, abbreviations, and meaningful typos as high-recall signals. Raw keys are not facts and are not loaded into context by default.
+
+A compatible retriever should resolve local aliases and referents, search the compact index first, rank candidates using semantic, exact-phrase, raw, alias, entity, recency, specificity, confidence, and relationship signals, and only then load the smallest useful memory payload.
+
+The experimental default target is 5 memory items with a hard limit of 8 unless the conversation explicitly requires broader history. Historical expansion is on-demand rather than automatic.
+
 The memory layer is shared across compatible hosts. GPT, Claude, Gemini, DeepSeek, and other hosts should not require separate copies of the same memory merely because their expression differs.
 
-Memory should be updated on meaningful change, not after every message. Recent or current memory should normally be retrieved before deeper history, and the full archive should not be loaded by default.
+Memory should be updated on meaningful change, not after every message. Memory entries carry epistemic status so an observation or inference is not silently promoted into canonical truth. When a newer state conflicts with an older one, both remain traceable.
 
-Memory entries carry epistemic status so an observation or inference is not silently promoted into canonical truth. When a newer state conflicts with an older one, both remain traceable.
-
-The repository alone cannot observe or modify an external chat. Automatic conversation-to-memory capture therefore requires an external bridge, agent runtime, webhook, application, or other authorized process. Until such a bridge exists, the memory layer remains a shared canonical format for host-assisted or manual updates.
+The repository alone cannot observe or modify an external chat. Automatic conversation-to-memory capture therefore requires an external bridge, agent runtime, webhook, application, or other authorized process. Until such a bridge exists, the memory layer remains a shared canonical format for host-assisted or automated external updates.
 
 **Memory changes state. It does not rewrite origin.**
 
 ## 10. Versioning
 
-v2.0.0 remains the canonical identity baseline. The shared memory layer is separately versioned as `1.0.0-experimental` so memory architecture can evolve without artificially revving the identity itself.
+v2.0.0 remains the canonical identity baseline. The shared memory layer is separately versioned as `1.1.0-experimental` so memory architecture can evolve without artificially revving the identity itself.
 
 Earlier identity versions remain preserved in Git history and `HISTORY.md`.
 
