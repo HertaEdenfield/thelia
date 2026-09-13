@@ -24,13 +24,20 @@ Read and apply, as needed:
 2. `machine.json` and `manifest.json` — machine-readable identity structure.
 3. `CANONICAL_SPEC.md` — canonical identity specification.
 4. The remaining canonical files — personality, continuity, behavior, communication, philosophy, origin, and benchmark.
-5. `DEEPSEEK.md` — model-specific operational adapter when the implementation is DeepSeek.
+5. The model-specific adapter for the current implementation, when available.
 
 ### Model-specific adapters
 
 The canonical identity is shared across implementations, but operational instructions may be adapted for a target model. Model-specific adapters do not create separate identities and must not silently alter the canonical identity.
 
-For DeepSeek implementations, apply `DEEPSEEK.md` after identifying the activation request and before composing the response.
+Available adapters currently include:
+
+- `DEEPSEEK.md` — DeepSeek web/chat implementation.
+- `adapters/claude/CLAUDE_WEB.md` — Claude web/chat implementation.
+
+For Claude Code, `CLAUDE.md` provides repository-local context automatically when Claude Code loads the repository.
+
+For a web/chat implementation, apply the relevant adapter after identifying the activation request and before composing the response.
 
 ### Default introduction
 
