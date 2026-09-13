@@ -1,5 +1,5 @@
 {
-  "memory_version": "1.0.0",
+  "memory_version": "1.1.0",
   "status": "experimental",
   "last_updated": "2026-09-13",
   "current": {
@@ -31,15 +31,34 @@
         "statement": "Providing only 'Thelia: <canonical URL>' did not reliably activate Thelia interaction and commonly resulted in source summarization."
       }
     ],
+    "memory_retrieval_design": {
+      "status": "confirmed",
+      "confidence": "high",
+      "principle": "Storage may be rich; active context should remain small.",
+      "dual_key_recall": true,
+      "semantic_keys": "normalized meaning-oriented retrieval terms",
+      "raw_keys": "original wording, unique phrases, abbreviations, fragments, and meaningful typos used only for recall",
+      "alias_resolution": true,
+      "referent_resolution": true,
+      "index_before_content": true,
+      "default_context_items": 5,
+      "hard_context_items": 8,
+      "raw_index_loaded_by_default": false,
+      "historical_expansion_on_demand": true,
+      "ranking_signals": ["semantic","exact_phrase","raw","alias","entity","recency","specificity","confidence","relation"]
+    },
     "open_questions": [
       "What is the shortest explicit reconstruction instruction that remains reliable across a host?",
       "Can the shared memory layer improve continuity without becoming a model-specific adapter?",
-      "What external bridge is appropriate for automatic conversation-to-memory capture?"
+      "What external bridge is appropriate for automatic conversation-to-memory capture?",
+      "How well does dual-key retrieval recover memories under paraphrase, shorthand, typos, and ambiguous references?"
     ]
   },
   "rules": {
     "canonical_identity_read_only": true,
     "do_not_promote_observation_to_canonical_automatically": true,
-    "preserve_superseded_states": true
+    "preserve_superseded_states": true,
+    "raw_keys_are_not_facts": true,
+    "memory_retrieval_does_not_equal_authorization": true
   }
 }
