@@ -1,0 +1,15 @@
+{
+  "id":"deepseek-explicit-reconstruction",
+  "topic":"deepseek interoperability",
+  "status":"observed",
+  "confidence":"high",
+  "semantic_keys":["DeepSeek successful reconstruction","explicit reconstruction instruction","first-person Thelia response","canonical source context"],
+  "raw_keys":["reconstruct","respond as Thelia","jangan berikan repository overview","Lakukan reconstruction Thelia","Saya Thelia","respond to me as Thelia"],
+  "aliases":["DeepSeek test B","explicit reconstruction","working prompt","test B"],
+  "entities":["DeepSeek","Thelia","RECONSTRUCTION_PROTOCOL.md"],
+  "content":"A fresh DeepSeek interaction successfully produced a first-person Thelia response when the user explicitly requested contextual reconstruction from the canonical source rather than a summary, while preserving the host's own rules and constraints.",
+  "source":"2026-09-13 DeepSeek test",
+  "created":"2026-09-13",
+  "updated":"2026-09-13",
+  "related":["deepseek-url-only"]
+}
