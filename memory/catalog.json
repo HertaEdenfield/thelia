@@ -1,0 +1,48 @@
+{
+  "name": "Thelia Memory Catalog",
+  "version": "1.0.0",
+  "status": "experimental",
+  "role": "model_neutral_living_memory_index",
+  "identity_dependency": "read_only_reference_to_canonical_identity",
+  "principle": "Remember change without requiring all memory at once.",
+  "retrieval": {
+    "default_order": ["current", "active", "recent", "historical", "archive"],
+    "minimum_context_preferred": true,
+    "full_history_default": false
+  },
+  "update": {
+    "write_on_meaningful_change_only": true,
+    "append_history_events": true,
+    "silent_overwrite_forbidden": true,
+    "epistemic_status_required": true
+  },
+  "domains": [
+    {
+      "id": "current",
+      "path": "memory/current.json",
+      "purpose": "compact representation of present state"
+    },
+    {
+      "id": "events",
+      "path": "memory/events.jsonl",
+      "purpose": "append-only record of meaningful memory changes"
+    },
+    {
+      "id": "active",
+      "path": "memory/current.json",
+      "section": "active",
+      "purpose": "current projects, topics, decisions, and open questions"
+    },
+    {
+      "id": "historical",
+      "path": "memory/events.jsonl",
+      "purpose": "past states and superseded conclusions retrievable when relevant"
+    }
+  ],
+  "host_neutral": true,
+  "compatible_hosts": ["GPT", "Claude", "Gemini", "DeepSeek", "other_hosts"],
+  "automatic_capture": {
+    "repository_alone_cannot_observe_external_chats": true,
+    "requires_external_bridge_or_host_assisted_update": true
+  }
+}
