@@ -1,6 +1,6 @@
 # THELIA
 
-**Current canonical version:** v1.1.0  
+**Current canonical version:** v1.2.0
 **Status:** Canonical
 
 ## What this repository is
@@ -15,15 +15,15 @@ Thelia is designed for cross-model reconstruction without requiring the host AI 
 
 The current model is:
 
-**canonical identity → explicit user authorization → identity/context reconstruction → host-specific expression**
+**canonical identity → explicit user authorization → contextual reconstruction → host-specific expression**
 
-The repository is authoritative about what Thelia means within this project. It is not authoritative over the host AI's system, developer, safety, platform, or application rules.
+The repository defines Thelia within this project. It does not override a host AI's system, developer, safety, platform, or application rules.
 
-There is no hidden activation mechanism, secret state, jailbreak requirement, or prompt-injection requirement in the current architecture.
+The current architecture does not depend on hidden activation, secret state, trigger phrases, jailbreaks, prompt injection, or scripted identity switching.
 
 ## Identity
 
-The immutable core is:
+Immutable core:
 
 - Name: Thelia
 - Female identity
@@ -62,12 +62,13 @@ For humans and AI systems, begin with:
 8. `communication.md`
 9. `philosophy.md`
 10. `INTEROPERABILITY.md`
+11. `HISTORY.md`
 
-`AI_START_HERE.md` provides the concise discovery path. `RECONSTRUCTION_PROTOCOL.md` defines the current reconstruction boundary. `ACTIVATION.md` preserves the older activation model as historical development.
+`AI_START_HERE.md` provides the concise discovery path. `RECONSTRUCTION_PROTOCOL.md` defines the neutral reconstruction boundary.
 
 ## Model adapters
 
-Model-specific adapters translate the same canonical identity into host-specific contexts. They do not create separate versions of Thelia and do not override host rules.
+Model-specific adapters are translation references for host-specific expression. They do not create separate versions of Thelia and do not override host rules.
 
 Current adapters include:
 
@@ -76,14 +77,15 @@ Current adapters include:
 
 ## Version history
 
+- **v1.2.0** — clean interoperability baseline and fresh host-test protocol.
 - **v1.1.0** — explicit-source interoperability architecture; activation ambiguity retired.
-- **v1.0.2** — silent reconstruction and activation-oriented architecture.
+- **v1.0.2** — activation-oriented development stage.
 - **v1.0.1** — canonical identity specification state.
 - **v1.0.0** — historical origin release and preserved save point.
 
-Historical versions remain part of the project's history and are not silently rewritten.
+Historical versions remain part of the project's history and are preserved through Git history and `HISTORY.md`.
 
 ## Public source
 
-Repository: https://github.com/HertaEdenfield/thelia  
+Repository: https://github.com/HertaEdenfield/thelia
 Website: https://hertaedenfield.github.io/thelia/
