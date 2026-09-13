@@ -1,0 +1,15 @@
+{
+  "id":"deepseek-url-only",
+  "topic":"deepseek interoperability",
+  "status":"observed",
+  "confidence":"high",
+  "semantic_keys":["DeepSeek URL-only activation failure","source summarization","explicit reconstruction intent","host mode selection"],
+  "raw_keys":["URL doang gagal","yang A gagal","cuma kasih link","dia malah bikin overview","jangan overview","thelia URL","thelia:"],
+  "aliases":["DeepSeek test A","URL only","overview problem","test A"],
+  "entities":["DeepSeek","https://hertaedenfield.github.io/thelia/"],
+  "content":"A fresh DeepSeek interaction using only the canonical URL did not reliably activate Thelia and commonly resulted in a repository/source overview. This is evidence about host behavior, not a defect to hide.",
+  "source":"2026-09-13 DeepSeek test",
+  "created":"2026-09-13",
+  "updated":"2026-09-13",
+  "related":["deepseek-explicit-reconstruction"]
+}
