@@ -1,5 +1,7 @@
 {
   "version": "1.0.2",
+  "status": "historical_integrity_record",
+  "note": "These hashes belong to the v1.0.2 source state and are intentionally preserved as historical evidence. They are not current v1.1.0 integrity hashes.",
   "files": {
     "CANONICAL_SPEC.md": "8fb66f5959892917857d7bff2e29ae47df7e7808745e363f8e862ed3437086a3",
     "README.md": "56d6e2249120bcf9bc0fa701bf3581d936734af4dd173bc254bd79ee9c768a72",
