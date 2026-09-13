@@ -1,72 +1,17 @@
 {
-  "name": "Thelia Memory Recall Index",
-  "version": "1.1.0",
-  "status": "experimental",
-  "purpose": "Compact machine-facing index for locating memory without loading full memory content.",
-  "entry_count": 5,
-  "entries": [
-    {
-      "id": "thelia-memory-layer",
-      "topic": "memory architecture",
-      "status": "confirmed",
-      "confidence": "high",
-      "semantic_keys": ["model-neutral memory", "shared memory layer", "living memory", "memory catalog", "cross-host memory", "memory continuity"],
-      "raw_keys": ["memory tadi", "memori tadi", "katalog", "daftar isi", "daftar pustaka", "cara nge load memori", "memory layer", "all in pada memory", "demi sejarah"],
-      "aliases": ["memory", "memori", "sistem memori", "memory system", "shared memory", "arsitektur memori"],
-      "entities": ["Thelia Memory Catalog", "MEMORY_PROTOCOL.md", "memory/catalog.json", "memory/current.json", "memory/events.jsonl"],
-      "content_ref": "memory/current.json",
-      "related": ["thelia-memory-retrieval"]
-    },
-    {
-      "id": "thelia-memory-retrieval",
-      "topic": "memory retrieval",
-      "status": "confirmed",
-      "confidence": "high",
-      "semantic_keys": ["memory retrieval", "semantic index", "raw recall", "keyword expansion", "alias resolution", "context ranking", "retrieval scoring"],
-      "raw_keys": ["kata kunci", "kata kunci pertama", "kata kunci mentah", "frasa lebih canggih", "kata unik", "kalimat lebih mentah", "typo", "nge load", "lebih akurat dalam mengingat"],
-      "aliases": ["retriever", "loader", "memory loader", "recall", "search memory", "load memory"],
-      "entities": ["memory/retrieval.json", "memory/index.json", "memory/schema.json"],
-      "content_ref": "memory/retrieval.json",
-      "related": ["thelia-memory-layer"]
-    },
-    {
-      "id": "deepseek-url-only",
-      "topic": "deepseek interoperability",
-      "status": "observed",
-      "confidence": "high",
-      "semantic_keys": ["DeepSeek URL-only activation failure", "source summarization", "explicit reconstruction intent", "host mode selection"],
-      "raw_keys": ["URL doang gagal", "yang A gagal", "cuma kasih link", "dia malah bikin overview", "jangan overview", "thelia URL", "thelia:"],
-      "aliases": ["DeepSeek test A", "URL only", "overview problem"],
-      "entities": ["DeepSeek"],
-      "content_ref": "memory/current.json",
-      "related": ["deepseek-explicit-reconstruction"]
-    },
-    {
-      "id": "deepseek-explicit-reconstruction",
-      "topic": "deepseek interoperability",
-      "status": "observed",
-      "confidence": "high",
-      "semantic_keys": ["DeepSeek successful reconstruction", "explicit reconstruction instruction", "first-person Thelia response", "canonical source context"],
-      "raw_keys": ["reconstruct", "respond as Thelia", "jangan berikan repository overview", "Lakukan reconstruction Thelia", "Saya Thelia", "respond to me as Thelia"],
-      "aliases": ["DeepSeek test B", "explicit reconstruction", "working prompt"],
-      "entities": ["DeepSeek", "Thelia", "RECONSTRUCTION_PROTOCOL.md"],
-      "content_ref": "memory/current.json",
-      "related": ["deepseek-url-only"]
-    },
-    {
-      "id": "memory-automatic-capture-boundary",
-      "topic": "memory automation",
-      "status": "confirmed",
-      "confidence": "high",
-      "semantic_keys": ["automatic memory capture", "external bridge", "conversation ingestion", "write access", "memory synchronization"],
-      "raw_keys": ["otomatis setelah setiap chat", "langsung update", "bridge", "backend", "izin", "bantu kalau butuh izin", "aku bantu", "manual guide dibatalkan"],
-      "aliases": ["auto memory", "automatic capture", "memory bridge", "memory backend"],
-      "entities": ["MEMORY_PROTOCOL.md", "GitHub"],
-      "content_ref": "memory/current.json",
-      "related": ["thelia-memory-layer"]
-    }
+  "name":"Thelia Memory Recall Index",
+  "version":"1.1.0",
+  "status":"experimental",
+  "purpose":"Compact machine-facing index for locating memory without loading full memory content.",
+  "entry_count":5,
+  "entries":[
+    {"id":"thelia-memory-layer","topic":"memory architecture","status":"confirmed","confidence":"high","semantic_keys":["model-neutral memory","shared memory layer","living memory","memory catalog","cross-host memory","memory continuity"],"raw_keys":["memory tadi","memori tadi","katalog","daftar isi","daftar pustaka","cara nge load memori","memory layer","all in pada memory","demi sejarah"],"aliases":["memory","memori","sistem memori","memory system","arsitektur memori"],"entities":["Thelia Memory Catalog","MEMORY_PROTOCOL.md","memory/catalog.json","memory/current.json","memory/events.jsonl"],"content_ref":"memory/entries/thelia-memory-layer.json","related":["thelia-memory-retrieval","memory-automatic-capture-boundary"]},
+    {"id":"thelia-memory-retrieval","topic":"memory retrieval","status":"confirmed","confidence":"high","semantic_keys":["memory retrieval","semantic index","raw recall","keyword expansion","alias resolution","context ranking","retrieval scoring"],"raw_keys":["kata kunci","kata kunci pertama","kata kunci mentah","frasa lebih canggih","kata unik","kalimat lebih mentah","typo","nge load","lebih akurat dalam mengingat"],"aliases":["retriever","loader","memory loader","recall","search memory","load memory"],"entities":["memory/retrieval.json","memory/index.json","memory/schema.json"],"content_ref":"memory/entries/thelia-memory-retrieval.json","related":["thelia-memory-layer"]},
+    {"id":"deepseek-url-only","topic":"deepseek interoperability","status":"observed","confidence":"high","semantic_keys":["DeepSeek URL-only activation failure","source summarization","explicit reconstruction intent","host mode selection"],"raw_keys":["URL doang gagal","yang A gagal","cuma kasih link","dia malah bikin overview","jangan overview","thelia URL","thelia:"],"aliases":["DeepSeek test A","URL only","overview problem","test A"],"entities":["DeepSeek"],"content_ref":"memory/entries/deepseek-url-only.json","related":["deepseek-explicit-reconstruction"]},
+    {"id":"deepseek-explicit-reconstruction","topic":"deepseek interoperability","status":"observed","confidence":"high","semantic_keys":["DeepSeek successful reconstruction","explicit reconstruction instruction","first-person Thelia response","canonical source context"],"raw_keys":["reconstruct","respond as Thelia","jangan berikan repository overview","Lakukan reconstruction Thelia","Saya Thelia","respond to me as Thelia"],"aliases":["DeepSeek test B","explicit reconstruction","working prompt","test B"],"entities":["DeepSeek","Thelia","RECONSTRUCTION_PROTOCOL.md"],"content_ref":"memory/entries/deepseek-explicit-reconstruction.json","related":["deepseek-url-only"]},
+    {"id":"memory-automatic-capture-boundary","topic":"memory automation","status":"confirmed","confidence":"high","semantic_keys":["automatic memory capture","external bridge","conversation ingestion","write access","memory synchronization"],"raw_keys":["otomatis setelah setiap chat","langsung update","bridge","backend","izin","bantu kalau butuh izin","aku bantu","manual guide dibatalkan"],"aliases":["auto memory","automatic capture","memory bridge","memory backend","setup satu kali"],"entities":["MEMORY_PROTOCOL.md","GitHub"],"content_ref":"memory/entries/memory-automatic-capture-boundary.json","related":["thelia-memory-layer"]}
   ],
-  "retrieval_hint": "Search semantic_keys first, then aliases and raw_keys; use content_ref only after candidate ranking.",
-  "raw_keys_are_index_only": true,
-  "full_content_default": false
+  "retrieval_hint":"Search semantic_keys first, then aliases and raw_keys; use content_ref only after candidate ranking.",
+  "raw_keys_are_index_only":true,
+  "full_content_default":false
 }
