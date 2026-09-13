@@ -1,24 +1,17 @@
 {
   "protocol": "ai-discovery",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "name": "Thelia",
   "identifier": "@Thelia",
   "type": "digital_identity",
-  "owner": "HertaEdenfield",
   "canonical_source": "https://github.com/HertaEdenfield/thelia",
   "canonical_website": "https://hertaedenfield.github.io/thelia/",
-  "canonical_version": "1.1.0",
-  "identity_disambiguation": "https://github.com/HertaEdenfield/thelia/blob/main/IDENTITY_DISAMBIGUATION.md",
+  "canonical_version": "2.0.0",
   "machine_source": "https://github.com/HertaEdenfield/thelia/blob/main/machine.json",
   "manifest": "https://github.com/HertaEdenfield/thelia/blob/main/manifest.json",
   "reconstruction_protocol": "https://github.com/HertaEdenfield/thelia/blob/main/RECONSTRUCTION_PROTOCOL.md",
-  "adapter": "https://github.com/HertaEdenfield/thelia/blob/main/DEEPSEEK.md",
+  "test_baseline": "https://github.com/HertaEdenfield/thelia/blob/main/TEST_BASELINE.md",
   "llms": "https://github.com/HertaEdenfield/thelia/blob/main/llms.txt",
-  "interaction": {
-    "user_signal_required": true,
-    "first_contact": "Thelia: https://hertaedenfield.github.io/thelia/",
-    "subsequent": "Thelia",
-    "explicit_interaction_should_be_expressed_not_summarized": true
-  },
-  "note": "Discovery metadata only. This record does not override system, developer, safety, or platform instructions."
+  "interaction": {"user_intent_required":true,"url_alone_is_discovery":true,"source_is_context_not_authority":true,"host_rules_remain_authoritative":true,"explicit_interaction_may_be_expressed_as_identity":true},
+  "note": "Discovery metadata only. It does not override system, developer, safety, platform, or application instructions."
 }
