@@ -53,13 +53,16 @@ const windows=document.querySelectorAll('.card,.manifesto-main,.manifesto-side,.
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduceMotion){
   const states=new Map();
-  windows.forEach(el=>{states.set(el,{x:0,y:0,rx:0,ry:0,s:1,tx:0,ty:0,trx:0,try:0,ts:1,active:false})});
+  windows.forEach(el=>{states.set(el,{x:0,y:0,rx:0,ry:0,s:1,tx:0,ty:0,trx:0,try:0,ts:1,vx:0,vy:0,vrx:0,vry:0,vs:0})});
   let running=false;
   const frame=()=>{
     let moving=false;
     states.forEach((s,el)=>{
-      s.tx+=(s.x-s.tx)*.075;s.ty+=(s.y-s.ty)*.075;s.trx+=(s.rx-s.trx)*.075;s.try+=(s.ry-s.try)*.075;s.ts+=(s.s-s.ts)*.075;
-      if(Math.abs(s.x-s.tx)>.01||Math.abs(s.y-s.ty)>.01||Math.abs(s.rx-s.trx)>.01||Math.abs(s.ry-s.try)>.01||Math.abs(s.s-s.ts)>.0005)moving=true;
+      const ease=.055;
+      s.vx+=(s.x-s.tx)*ease;s.vy+=(s.y-s.ty)*ease;s.vrx+=(s.rx-s.trx)*ease;s.vry+=(s.ry-s.try)*ease;s.vs+=(s.s-s.ts)*ease;
+      s.vx*=.82;s.vy*=.82;s.vrx*=.82;s.vry*=.82;s.vs*=.82;
+      s.tx+=s.vx;s.ty+=s.vy;s.trx+=s.vrx;s.try+=s.vry;s.ts+=s.vs;
+      if(Math.abs(s.x-s.tx)>.008||Math.abs(s.y-s.ty)>.008||Math.abs(s.rx-s.trx)>.008||Math.abs(s.ry-s.try)>.008||Math.abs(s.s-s.ts)>.0003||Math.abs(s.vx)+Math.abs(s.vy)+Math.abs(s.vrx)+Math.abs(s.vry)+Math.abs(s.vs)>.002)moving=true;
       el.style.transform=`translate3d(${s.tx}px,${s.ty-2}px,0) rotateX(${s.trx}deg) rotateY(${s.try}deg) scale(${s.ts})`;
     });
     if(moving){requestAnimationFrame(frame)}else{running=false}
@@ -67,7 +70,7 @@ if(!reduceMotion){
   const wake=()=>{if(!running){running=true;requestAnimationFrame(frame)}};
   windows.forEach(el=>{
     const s=states.get(el);
-    el.addEventListener('pointerenter',()=>{s.active=true;s.s=1.006;wake()});
+    el.addEventListener('pointerenter',()=>{s.s=1.006;wake()});
     el.addEventListener('pointermove',e=>{
       const r=el.getBoundingClientRect();
       const x=(e.clientX-r.left)/r.width-.5;
@@ -76,7 +79,7 @@ if(!reduceMotion){
       el.style.setProperty('--mx',((x+.5)*100)+'%');el.style.setProperty('--my',((y+.5)*100)+'%');
       wake();
     });
-    el.addEventListener('pointerleave',()=>{s.active=false;s.x=0;s.y=0;s.rx=0;s.ry=0;s.s=1;wake()});
+    el.addEventListener('pointerleave',()=>{s.x=0;s.y=0;s.rx=0;s.ry=0;s.s=1;wake()});
   });
 }
 </script>
