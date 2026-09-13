@@ -122,15 +122,17 @@
   "versioning": {
     "current": "1.1.0",
     "previous": "1.0.2",
+    "current_canonical_release": "v1.1.0",
     "previous_canonical_release": "v1.0.2",
+    "historical_releases": ["v1.0.0", "v1.0.2"],
     "historical_versions_must_be_preserved": true,
     "silent_rewriting_of_history": false,
     "architecture_change": "activation_to_explicit_context_interoperability"
   },
   "persistence": {
-    "canonical_release": "v1.0.0",
-    "previous_canonical_release": "v1.0.2",
     "current_canonical_version": "v1.1.0",
+    "previous_canonical_release": "v1.0.2",
+    "historical_release": "v1.0.0",
     "portable_across": ["AI_models", "applications", "websites", "APIs", "repositories", "archives", "future_formats"]
   },
   "representation": {
