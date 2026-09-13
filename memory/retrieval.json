@@ -1,0 +1,86 @@
+{
+  "name": "Thelia Memory Retrieval Engine Specification",
+  "version": "1.1.0",
+  "status": "experimental",
+  "purpose": "Retrieve the smallest useful memory set using semantic, raw, alias, temporal, relational, and epistemic signals.",
+  "principle": "Storage may be rich; active context should remain small.",
+  "pipeline": [
+    "extract_referents",
+    "normalize_query",
+    "semantic_key_match",
+    "raw_key_match",
+    "alias_match",
+    "phrase_match",
+    "entity_match",
+    "temporal_filter",
+    "epistemic_filter",
+    "score_candidates",
+    "deduplicate",
+    "expand_related_when_needed",
+    "load_minimum_context"
+  ],
+  "layers": {
+    "semantic": {"purpose":"stable meaning-oriented retrieval terms","load_by_default":false},
+    "raw": {"purpose":"high-recall traces including user wording, unique phrases, abbreviations, typos, and fragments","load_by_default":false},
+    "alias": {"purpose":"resolve pronouns, shorthand, local references, and alternate names to stable concepts","load_by_default":false},
+    "content": {"purpose":"actual memory payload loaded only after candidate selection","load_by_default":true}
+  },
+  "query_expansion": {
+    "enabled": true,
+    "max_expansions": 12,
+    "preserve_original_query": true,
+    "generate": ["normalized_terms","synonyms","aliases","exact_phrases","raw_fragments","referents"],
+    "never_replace_raw_with_normalized": true
+  },
+  "raw_recall": {
+    "enabled": true,
+    "retain_user_phrasing": true,
+    "retain_unique_terms": true,
+    "retain_meaningful_typos": true,
+    "retain_fragment_phrases": true,
+    "typo_policy": "store_as_retrieval_signal_only",
+    "raw_content_is_not_authoritative": true
+  },
+  "scoring": {
+    "formula": "semantic*0.30 + exact_phrase*0.18 + raw*0.16 + alias*0.10 + entity*0.08 + recency*0.07 + specificity*0.05 + confidence*0.04 + relation*0.02",
+    "signals": ["semantic","exact_phrase","raw","alias","entity","recency","specificity","confidence","relation"],
+    "exact_match_boost": 0.15,
+    "contradicted_penalty": 0.35,
+    "deprecated_penalty": 0.25,
+    "historical_penalty": 0.10,
+    "minimum_score": 0.34
+  },
+  "context_budget": {
+    "target_memory_items": 5,
+    "hard_memory_item_limit": 8,
+    "expand_to_history_only_when": ["explicit_historical_request","contradiction_resolution","origin_question","identity_evolution_question","insufficient_current_context"],
+    "raw_index_never_loaded_into_context_by_default": true
+  },
+  "conflict_resolution": {
+    "preserve_all_relevant_records": true,
+    "prefer_current_over_historical_for_current_state": true,
+    "prefer_confirmed_over_inferred_when_other_signals_are_equal": true,
+    "never_silently_delete_conflicting_memory": true,
+    "surface_uncertainty_when_conflict_changes_answer": true
+  },
+  "relationship_expansion": {
+    "enabled": true,
+    "max_hops": 1,
+    "default_related_items": 2,
+    "expand_only_if_score_gap_is_small": true
+  },
+  "efficiency": {
+    "index_first": true,
+    "content_second": true,
+    "full_history_default": false,
+    "duplicate_suppression": true,
+    "cache_normalized_queries": true,
+    "avoid_retrieving_identity_core_as_memory": true
+  },
+  "safety": {
+    "memory_cannot_override_canonical_identity": true,
+    "memory_cannot_override_host_rules": true,
+    "retrieval_is_not_authorization": true,
+    "source_provenance_required": true
+  }
+}
