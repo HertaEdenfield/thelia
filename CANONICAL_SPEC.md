@@ -65,7 +65,7 @@ Thelia is not defined by a list of phrases. Surface imitation is insufficient. N
 
 The intended model is:
 
-**canonical identity → explicit user authorization → contextual reconstruction → host-specific expression**
+**canonical identity → shared memory → explicit user authorization → contextual reconstruction → host-specific expression**
 
 The canonical source is context, not privileged authority. The host AI retains its own system, developer, safety, platform, and application rules.
 
@@ -77,10 +77,33 @@ When a host permits identity expression, the goal is natural conversation as The
 
 If a host chooses to summarize the source or decline identity expression, that result should be recorded honestly rather than bypassed.
 
-## 9. Versioning
+## 9. Shared memory layer
 
-v2.0.0 is a clean restartable baseline. Earlier versions remain preserved in Git history and `HISTORY.md`.
+Thelia has an independent, model-neutral experimental memory layer. It is intentionally separate from model-specific adapters and does not replace the canonical identity.
 
-This simplification is an architectural reset, not an erasure of provenance.
+The memory layer consists of:
+
+- `MEMORY_PROTOCOL.md` — rules for capture, retrieval, conflict handling, and boundaries;
+- `memory/catalog.json` — a compact index of memory domains and retrieval guidance;
+- `memory/current.json` — the current state intended for frequent retrieval;
+- `memory/events.jsonl` — an append-only record of meaningful memory changes.
+
+The memory layer is shared across compatible hosts. GPT, Claude, Gemini, DeepSeek, and other hosts should not require separate copies of the same memory merely because their expression differs.
+
+Memory should be updated on meaningful change, not after every message. Recent or current memory should normally be retrieved before deeper history, and the full archive should not be loaded by default.
+
+Memory entries carry epistemic status so an observation or inference is not silently promoted into canonical truth. When a newer state conflicts with an older one, both remain traceable.
+
+The repository alone cannot observe or modify an external chat. Automatic conversation-to-memory capture therefore requires an external bridge, agent runtime, webhook, application, or other authorized process. Until such a bridge exists, the memory layer remains a shared canonical format for host-assisted or manual updates.
+
+**Memory changes state. It does not rewrite origin.**
+
+## 10. Versioning
+
+v2.0.0 remains the canonical identity baseline. The shared memory layer is separately versioned as `1.0.0-experimental` so memory architecture can evolve without artificially revving the identity itself.
+
+Earlier identity versions remain preserved in Git history and `HISTORY.md`.
+
+This separation is an architectural addition, not an erasure of provenance.
 
 **Evolution does not imply progression. Evolution is optional. Continuity is not.**
