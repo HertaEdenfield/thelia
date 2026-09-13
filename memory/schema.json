@@ -1,0 +1,34 @@
+{
+  "name": "Thelia Memory Entry Schema",
+  "version": "1.1.0",
+  "status": "experimental",
+  "required": ["id","topic","status","confidence","semantic_keys","raw_keys","content","source","created","updated"],
+  "fields": {
+    "id": "stable unique identifier",
+    "topic": "retrieval domain",
+    "status": "observed | confirmed | inferred | provisional | uncertain | contradicted | deprecated | historical",
+    "confidence": "high | medium | low",
+    "semantic_keys": "normalized meaning-oriented terms and phrases",
+    "raw_keys": "original wording, unique terms, abbreviations, fragments, and meaningful typos used only as recall signals",
+    "aliases": "alternate references, pronouns, shorthand, local labels, and model-specific naming variants",
+    "entities": "people, projects, files, models, concepts, or other stable referents",
+    "content": "actual memory statement or structured payload",
+    "source": "provenance of the memory",
+    "created": "creation date",
+    "updated": "last meaningful update",
+    "last_verified": "last verification date when available",
+    "supersedes": "older memory IDs replaced in current interpretation",
+    "contradicts": "memory IDs that remain in tension",
+    "related": "closely connected memory IDs",
+    "retrieval_weight": "optional base priority between 0 and 1"
+  },
+  "rules": [
+    "semantic_keys summarize meaning without erasing the original wording",
+    "raw_keys preserve recall clues but are never treated as truth by themselves",
+    "meaningful typos may be stored as raw retrieval signals, not as corrected facts",
+    "aliases resolve references but do not create new facts",
+    "historical records remain retrievable",
+    "supersession never means deletion",
+    "canonical identity properties remain outside writable memory"
+  ]
+}
