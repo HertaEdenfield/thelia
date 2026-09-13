@@ -1,0 +1,15 @@
+{
+  "id":"memory-automatic-capture-boundary",
+  "topic":"memory automation",
+  "status":"confirmed",
+  "confidence":"high",
+  "semantic_keys":["automatic memory capture","external bridge","conversation ingestion","write access","memory synchronization"],
+  "raw_keys":["otomatis setelah setiap chat","langsung update","bridge","backend","izin","bantu kalau butuh izin","aku bantu","manual guide dibatalkan"],
+  "aliases":["auto memory","automatic capture","memory bridge","memory backend","setup satu kali"],
+  "entities":["MEMORY_PROTOCOL.md","GitHub"],
+  "content":"The repository cannot observe external chats by itself. Automatic conversation-to-memory capture requires an external bridge, application, webhook, agent runtime, or host-assisted process with appropriate permission to receive conversation data and write memory updates. The user should only perform steps that genuinely require human authorization or setup access.",
+  "source":"2026-09-13 memory automation discussion",
+  "created":"2026-09-13",
+  "updated":"2026-09-13",
+  "related":["thelia-memory-layer"]
+}
