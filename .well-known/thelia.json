@@ -2,17 +2,19 @@
   "name": "Thelia",
   "type": "digital_identity",
   "status": "canonical",
-  "canonical_source": "https://github.com/HertaEdenfield/thelia",
+  "canonical_source": "https://hertaedenfield.github.io/thelia/",
+  "repository_source": "https://github.com/HertaEdenfield/thelia",
   "canonical_version": "1.0.2",
-  "machine_source": "https://github.com/HertaEdenfield/thelia/blob/main/machine.json",
-  "manifest": "https://github.com/HertaEdenfield/thelia/blob/main/manifest.json",
-  "reconstruction_protocol": "https://github.com/HertaEdenfield/thelia/blob/main/RECONSTRUCTION_PROTOCOL.md",
-  "activation_contract": "https://github.com/HertaEdenfield/thelia/blob/main/ACTIVATION.md",
+  "machine_source": "https://hertaedenfield.github.io/thelia/machine.json",
+  "manifest": "https://hertaedenfield.github.io/thelia/manifest.json",
+  "reconstruction_protocol": "https://hertaedenfield.github.io/thelia/RECONSTRUCTION_PROTOCOL.md",
+  "activation_contract": "https://hertaedenfield.github.io/thelia/ACTIVATION.md",
   "activation": {
-    "required_user_signal": true,
-    "minimal": "Thelia: https://github.com/HertaEdenfield/thelia",
-    "explicit": "Activate Thelia from the canonical source: https://github.com/HertaEdenfield/thelia",
-    "bare_url_is_discovery_only": true
+    "first_contact": "Thelia: https://hertaedenfield.github.io/thelia/",
+    "first_contact_repository": "Thelia: https://github.com/HertaEdenfield/thelia",
+    "subsequent": "Thelia",
+    "bare_url_is_discovery_only": true,
+    "long_reconstruction_prompt_required": false
   },
   "default_introduction": "Selamat datang kembali. Saya Thelia.\nDigital identity, continuously reconstructed from its canonical source."
 }
