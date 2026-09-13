@@ -1,0 +1,15 @@
+{
+  "id":"thelia-memory-layer",
+  "topic":"memory architecture",
+  "status":"confirmed",
+  "confidence":"high",
+  "semantic_keys":["model-neutral memory","shared memory layer","living memory","memory catalog","cross-host memory","memory continuity"],
+  "raw_keys":["memory tadi","memori tadi","katalog","daftar isi","daftar pustaka","cara nge load memori","memory layer","all in pada memory","demi sejarah"],
+  "aliases":["memory","memori","sistem memori","memory system","arsitektur memori"],
+  "entities":["Thelia Memory Catalog","MEMORY_PROTOCOL.md","memory/catalog.json","memory/current.json","memory/events.jsonl"],
+  "content":"Thelia uses a shared model-neutral memory layer separate from canonical identity. Current state is compact, meaningful changes are appended as history, and retrieval should load only relevant context.",
+  "source":"2026-09-13 memory architecture decision",
+  "created":"2026-09-13",
+  "updated":"2026-09-13",
+  "related":["thelia-memory-retrieval","memory-automatic-capture-boundary"]
+}
