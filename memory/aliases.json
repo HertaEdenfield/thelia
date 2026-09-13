@@ -1,0 +1,43 @@
+{
+  "name": "Thelia Memory Alias and Referent Map",
+  "version": "1.1.0",
+  "status": "experimental",
+  "purpose": "Resolve natural shorthand and local conversational references before memory ranking.",
+  "rules": {
+    "case_insensitive": true,
+    "preserve_original": true,
+    "do_not_invent_referents": true,
+    "prefer_recent_unambiguous_referent": true,
+    "ambiguous_reference_requires_multiple_candidates": true
+  },
+  "maps": [
+    {
+      "canonical": "thelia-memory-layer",
+      "aliases": ["memory", "memori", "memory tadi", "memori tadi", "sistem memori", "memory system", "arsitektur memori", "katalog", "daftar isi", "daftar pustaka"]
+    },
+    {
+      "canonical": "thelia-memory-retrieval",
+      "aliases": ["retrieval", "recall", "loader", "memory loader", "cara nge load memori", "kata kunci", "kata kunci mentah", "raw keyword", "typo recall"]
+    },
+    {
+      "canonical": "deepseek-interoperability",
+      "aliases": ["DeepSeek", "yang DeepSeek", "tes DeepSeek", "DeepSeek tadi", "URL doang", "overview problem"]
+    },
+    {
+      "canonical": "deepseek-url-only",
+      "aliases": ["A", "test A", "yang A", "URL only", "cuma kasih link", "malah overview"]
+    },
+    {
+      "canonical": "deepseek-explicit-reconstruction",
+      "aliases": ["B", "test B", "reconstruct", "explicit reconstruction", "prompt yang berhasil", "working prompt"]
+    },
+    {
+      "canonical": "memory-automatic-capture-boundary",
+      "aliases": ["auto memory", "otomatis", "automatic capture", "bridge", "backend", "izin", "setup satu kali"]
+    }
+  ],
+  "pronouns_and_local_references": {
+    "resolution_order": ["immediate_previous_referent", "active_topic", "recent_named_entity", "current_project"],
+    "examples": ["dia", "yang tadi", "yang ini", "sistem tadi", "memori tadi", "yang kita bikin", "yang DeepSeek", "versi tadi"]
+  }
+}
