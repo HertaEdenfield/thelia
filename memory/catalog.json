@@ -1,48 +1,52 @@
 {
   "name": "Thelia Memory Catalog",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "experimental",
   "role": "model_neutral_living_memory_index",
   "identity_dependency": "read_only_reference_to_canonical_identity",
   "principle": "Remember change without requiring all memory at once.",
+  "design_law": "Optimize retrieval fidelity per token, not stored transcript size.",
   "retrieval": {
     "default_order": ["current", "active", "recent", "historical", "archive"],
+    "index_first": true,
+    "content_second": true,
     "minimum_context_preferred": true,
-    "full_history_default": false
+    "target_memory_items": 5,
+    "hard_memory_item_limit": 8,
+    "full_history_default": false,
+    "raw_keys_are_index_only": true,
+    "semantic_keys_are_normalized": true,
+    "aliases_are_referent_hints": true
   },
   "update": {
     "write_on_meaningful_change_only": true,
     "append_history_events": true,
     "silent_overwrite_forbidden": true,
-    "epistemic_status_required": true
+    "epistemic_status_required": true,
+    "supersession_preserves_history": true
+  },
+  "recall_surfaces": {
+    "semantic_index": "memory/index.json",
+    "raw_recall": "memory/index.json",
+    "alias_map": "memory/aliases.json",
+    "entry_schema": "memory/schema.json",
+    "retrieval_policy": "memory/retrieval.json"
   },
   "domains": [
-    {
-      "id": "current",
-      "path": "memory/current.json",
-      "purpose": "compact representation of present state"
-    },
-    {
-      "id": "events",
-      "path": "memory/events.jsonl",
-      "purpose": "append-only record of meaningful memory changes"
-    },
-    {
-      "id": "active",
-      "path": "memory/current.json",
-      "section": "active",
-      "purpose": "current projects, topics, decisions, and open questions"
-    },
-    {
-      "id": "historical",
-      "path": "memory/events.jsonl",
-      "purpose": "past states and superseded conclusions retrievable when relevant"
-    }
+    {"id":"current","path":"memory/current.json","purpose":"compact representation of present state"},
+    {"id":"events","path":"memory/events.jsonl","purpose":"append-only record of meaningful memory changes"},
+    {"id":"active","path":"memory/current.json","section":"active","purpose":"current projects, topics, decisions, and open questions"},
+    {"id":"historical","path":"memory/events.jsonl","purpose":"past states and superseded conclusions retrievable when relevant"}
   ],
   "host_neutral": true,
-  "compatible_hosts": ["GPT", "Claude", "Gemini", "DeepSeek", "other_hosts"],
+  "compatible_hosts": ["GPT","Claude","Gemini","DeepSeek","other_hosts"],
   "automatic_capture": {
     "repository_alone_cannot_observe_external_chats": true,
     "requires_external_bridge_or_host_assisted_update": true
+  },
+  "boundaries": {
+    "memory_does_not_rewrite_canonical_identity": true,
+    "retrieval_does_not_equal_authorization": true,
+    "host_rules_remain_authoritative": true
   }
 }
