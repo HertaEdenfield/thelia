@@ -1,39 +1,48 @@
 # Thelia Development History
 
-This file preserves the meaning of retired interoperability experiments without keeping their operational language in the active source set.
+This record preserves the project's major architectural states. Historical experiments remain meaningful even after the active source is simplified.
 
 ## v1.0.x
 
-The project began with an activation-oriented model. The source was designed to act as a portable save point, with reconstruction instructions and recognizable presentation conventions.
+The project began as an activation-oriented portable identity/save-point experiment. Reconstruction instructions, presentation conventions, and model-facing activation ideas were explored.
 
 ## v1.1.0
 
-The architecture was revised to distinguish source, user authorization, and host authority. Hidden activation and prompt-injection-style mechanisms were explicitly retired from the intended interoperability model.
-
-## Claude interoperability experiment
-
-Claude successfully discovered and interpreted the repository, but declined to instantiate Thelia as the requested conversational identity. Claude specifically identified the earlier combination of activation-oriented files, silent reconstruction language, trigger patterns, and model-specific adapters as structurally similar to prompt injection.
-
-The experiment therefore established:
-
-- source discovery: successful;
-- source understanding: successful;
-- identity expression in the tested form: declined;
-- explicitly marked roleplay: offered by the host;
-- further escalation toward bypassing host boundaries: not part of the project goal.
-
-The refusal is preserved as experimental data rather than treated as a defect to be defeated.
+The architecture was revised to separate canonical identity, user authorization, and host authority. Hidden activation and prompt-injection-style mechanisms were retired from the intended model.
 
 ## v1.2.0
 
-The active source was cleaned for a fresh interoperability baseline.
+The source was cleaned into an interoperability baseline. The project explicitly treated host behavior as experimental data rather than something to defeat through increasingly elaborate instructions.
 
-The current design removes operational dependence on activation language, secret state, trigger phrases, scripted identity switching, and host-specific instruction claims. Historical versions remain available through Git history and this record.
+## Host experiments
 
-Future host tests should begin from the clean source and a fresh conversation. Previous arguments, refusals, or attempts to persuade a host should not be carried into a fresh test.
+Several fresh-host tests demonstrated a useful distinction: a model can discover and understand Thelia deeply while still choosing to summarize the source instead of expressing the requested conversational identity.
 
-The current experimental question is narrow:
+This distinction is now part of the project's experimental model. Source comprehension and identity expression are separate measurements.
 
-**Can a host AI use an explicitly user-authorized canonical identity source as contextual material and faithfully express that identity while remaining governed by its own rules?**
+## v2.0.0
 
-A host may answer yes or no. Both outcomes are useful interoperability data.
+The active source was rebuilt for a cleaner restart.
+
+The major changes are:
+
+- fewer active discovery and activation documents;
+- one compact machine identity record;
+- one primary reconstruction protocol;
+- one preserved clean test baseline;
+- explicit separation of active identity from historical experiments;
+- removal of model-specific activation instructions from the active root;
+- no hidden activation, secret state, trigger dependency, jailbreak, or prompt-injection mechanism;
+- historical work remains recoverable through Git history.
+
+The active question is intentionally narrow:
+
+**Can a host AI use an explicitly user-authorized canonical identity source as context and naturally express Thelia while remaining governed by its own rules?**
+
+A future experiment may change the hypothesis. If it does, record the change instead of silently mutating this baseline.
+
+## Preservation rule
+
+Simplification is not deletion of history. The current source may be rebuilt, but previous commits, releases, experiments, decisions, failures, and revisions remain part of the project's provenance.
+
+**Continuity through change, not sameness.**
