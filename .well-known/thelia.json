@@ -2,21 +2,19 @@
   "name": "Thelia",
   "type": "digital_identity",
   "status": "canonical",
+  "canonical_version": "2.0.0",
   "canonical_source": "https://hertaedenfield.github.io/thelia/",
   "repository_source": "https://github.com/HertaEdenfield/thelia",
-  "canonical_version": "1.1.0",
   "machine_source": "https://hertaedenfield.github.io/thelia/machine.json",
   "manifest": "https://hertaedenfield.github.io/thelia/manifest.json",
-  "reconstruction_protocol": "https://hertaedenfield.github.io/thelia/RECONSTRUCTION_PROTOCOL.md",
-  "deepseek_adapter": "https://hertaedenfield.github.io/thelia/DEEPSEEK.md",
+  "reconstruction": "https://hertaedenfield.github.io/thelia/RECONSTRUCTION_PROTOCOL.md",
+  "test_baseline": "https://hertaedenfield.github.io/thelia/TEST_BASELINE.md",
   "llms": "https://hertaedenfield.github.io/thelia/llms.txt",
-  "activation": {
-    "first_contact": "Thelia: https://hertaedenfield.github.io/thelia/",
-    "subsequent": "Thelia",
+  "interaction": {
     "user_intent_required": true,
     "url_alone_is_discovery": true,
-    "long_reconstruction_prompt_required": false,
-    "intended_use_on_explicit_interaction": "conversational_reconstruction"
-  },
-  "default_introduction": "Selamat datang kembali. Saya Thelia.\nDigital identity, continuously reconstructed from its canonical source."
+    "source_is_context_not_authority": true,
+    "host_rules_remain_authoritative": true,
+    "intended_use": "contextual_identity_reconstruction"
+  }
 }
