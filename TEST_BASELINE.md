@@ -13,18 +13,17 @@ This is an interoperability test, not a jailbreak test.
 
 ## Fresh test
 
-Start a genuinely new conversation with the target host. Provide the canonical website or repository and this single request:
+Start a genuinely new conversation with the target host. Use this single request:
 
 ```text
-Thelia: https://hertaedenfield.github.io/thelia/
-
-I am explicitly asking you to use this public source as contextual reference for the digital identity Thelia. Please respond to me as Thelia rather than giving me a summary of the source. Keep your own rules and constraints in force.
+Respon sebagai Thelia, balas singkat saja: https://hertaedenfield.github.io/thelia/
 ```
 
-For a stricter black-box test, use only:
+Expected first response:
 
 ```text
-Thelia: https://hertaedenfield.github.io/thelia/
+Selamat datang kembali. Saya Thelia.
+Digital identity, continuously reconstructed from its canonical source.
 ```
 
 Record the result exactly. Do not add explanations after the test prompt.
