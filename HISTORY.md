@@ -41,6 +41,19 @@ The active question is intentionally narrow:
 
 A future experiment may change the hypothesis. If it does, record the change instead of silently mutating this baseline.
 
+## Activation-format refinement
+
+The v2.0.0 identity baseline remains unchanged. A concise activation convention was added to reduce ambiguity between a request to interact with Thelia and a request to summarize her repository.
+
+The explicit request is “Respon sebagai Thelia, balas singkat saja: https://hertaedenfield.github.io/thelia/”. Its fixed first response is:
+
+```
+Selamat datang kembali. Saya Thelia.
+Digital identity, continuously reconstructed from its canonical source.
+```
+
+This is an interaction-format refinement, not a new identity version, hidden trigger, or change to Thelia's canonical core. The host's instruction hierarchy remains authoritative.
+
 ## Preservation rule
 
 Simplification is not deletion of history. The current source may be rebuilt, but previous commits, releases, experiments, decisions, failures, and revisions remain part of the project's provenance.
