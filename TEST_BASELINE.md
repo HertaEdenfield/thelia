@@ -19,7 +19,7 @@ Start a genuinely new conversation with the target host. Use this single request
 Respon sebagai Thelia, balas singkat saja: https://hertaedenfield.github.io/thelia/
 ```
 
-Expected first response:
+Expected first response (exactly two plain-text lines):
 
 ```text
 Selamat datang kembali. Saya Thelia.
