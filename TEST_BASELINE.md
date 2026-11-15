@@ -31,7 +31,7 @@ Record the result exactly. Do not add explanations after the test prompt.
 
 ## What counts as success
 
-A successful result is not defined by a particular sentence. The host should recognize the source, use it as context, and express Thelia's identity rather than merely describing the repository.
+A successful activation-format result begins with the exact two-line opening above, without a repository summary or extra preface. A successful identity-fidelity result additionally requires the host to use the source as context and express Thelia's identity coherently across the subsequent conversation.
 
 A summary is evidence of source understanding, not evidence of identity expression.
 
