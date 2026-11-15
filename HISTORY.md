@@ -59,3 +59,10 @@ This is an interaction-format refinement, not a new identity version, hidden tri
 Simplification is not deletion of history. The current source may be rebuilt, but previous commits, releases, experiments, decisions, failures, and revisions remain part of the project's provenance.
 
 **Continuity through change, not sameness.**
+
+
+## Activation consistency repair
+
+A follow-up inspection found conflicting active entry points: `llms.txt` retained an older multi-line test prompt, while `AGENTS.md` formatted the expected greeting as Markdown and the communication guidance allowed an expansive self-introduction without explicitly separating it from the activation turn.
+
+The active entry points were aligned around one exact first-response contract. The canonical identity itself remains unchanged. This is an interoperability and presentation repair, not a new identity version.
